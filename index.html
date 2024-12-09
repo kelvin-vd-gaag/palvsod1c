@@ -7,9 +7,9 @@
 <body>
 
 
-<h1 id="resultaat"></h1>
 <!--Als de dobbelsteel boven de 4 is. Dan heb je 'gewonnen' en moet het bericht de speler feliciteren-->
 <div id="bericht"></div>
+<img src="images/dice-six-faces-1.png" alt="" width="250" id="dice">
 <!--Als de gebruiker op de knop ‘dobbelsteen’ klikt-->
 <button onclick="roll_the_dice()">Dobbelsteen</button>
 
@@ -23,7 +23,12 @@
         var dobbelsteen = Math.ceil(Math.random() * 6);
 
         // Laat het resultaat zien
-        document.getElementById("resultaat").innerHTML = dobbelsteen;
+        document.getElementById("dice").src = "images/dice-six-faces-" + dobbelsteen + ".png";
+        if (dobbelsteen >= 4){
+            document.getElementById("bericht").innerHTML = "U heeft gewonnen!";
+        }else{
+            document.getElementById("bericht").innerHTML = "U heeft verloren!";
+        }
     }
 
 
